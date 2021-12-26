@@ -1,0 +1,14 @@
+#!/bin/ksh
+#
+# $OpenBSD: rocrail.rc,v 1.5 2018/01/11 19:27:04 rpe Exp $
+
+daemon="${TRUEPREFIX}/bin/rocrail"
+daemon_user="_rocrail"
+daemon_flags="-w /var/rocrail -l ${TRUEPREFIX}/lib/rocrail -img ${TRUEPREFIX}/share/rocrail/images"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1
